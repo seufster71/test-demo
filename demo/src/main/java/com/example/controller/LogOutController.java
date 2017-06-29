@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,20 +15,18 @@ import com.example.utils.Response;
 
 @RestController
 @PreAuthorize("hasAuthority('PRIVATE')")
-@RequestMapping("private/")
-public class PrivateController {
+@RequestMapping("logout/")
+public class LogOutController {
 
 	@RequestMapping(value = "service", method = RequestMethod.POST)
 	public Response service(@RequestBody Request request){
 		
 		Response response = new Response();
 		Map<String,Object> params = new HashMap<String,Object>();
-		
-		params.put("authstatus","in private");
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		params.put("principal", auth.getPrincipal());
+	
+		SecurityContextHolder.clearContext();
+		params.put("authstatus","in logout");
 		response.setParams(params);
-		
 		return response;
 	}
 }
