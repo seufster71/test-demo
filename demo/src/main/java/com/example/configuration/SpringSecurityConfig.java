@@ -3,6 +3,7 @@ package com.example.configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -11,6 +12,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import com.example.security.CustomAuthenticationProvider;
 
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -26,9 +28,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
 					.antMatchers("/", "/login/**", "/public/**").permitAll()
-					.antMatchers("/admin/**").hasAnyRole("ADMIN")
-					.antMatchers("/private/**").hasAnyRole("PRIVATE")
-					.antMatchers("/metric/**").hasAnyRole("USER")
 					.anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -36,7 +35,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 					.permitAll()
 					.and()
                 .logout()
-                .logoutUrl("/logout")
+                .logoutUrl("/logout.html")
 					.permitAll()
 					.and()
                 .exceptionHandling().accessDeniedHandler(accessDeniedHandler);

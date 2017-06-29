@@ -13,17 +13,16 @@ import com.example.utils.Request;
 import com.example.utils.Response;
 
 @RestController
-@PreAuthorize("hasAuthority('PRIVATE')")
-@RequestMapping("private/")
-public class PrivateController {
+@PreAuthorize("hasAuthority('METRIC')")
+@RequestMapping("metric/")
+public class MetricController {
 
 	@RequestMapping(value = "service", method = RequestMethod.POST)
 	public Response service(@RequestBody Request request){
 		
 		Response response = new Response();
 		Map<String,Object> params = new HashMap<String,Object>();
-		
-		params.put("authstatus","in private");
+		params.put("authstatus","in metric");
 		response.setParams(params);
 		
 		return response;
