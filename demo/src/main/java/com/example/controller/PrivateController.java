@@ -16,7 +16,7 @@ import com.example.utils.Response;
 
 @RestController
 @PreAuthorize("hasAuthority('PRIVATE')")
-@RequestMapping("api/private/")
+@RequestMapping("/api/private/")
 public class PrivateController {
 
 	@RequestMapping(value = "service", method = RequestMethod.POST)

@@ -15,7 +15,7 @@ import com.example.utils.Response;
 
 @RestController
 @PreAuthorize("hasAuthority('PRIVATE')")
-@RequestMapping("api/logout/")
+@RequestMapping("/api/logout/")
 public class LogOutController {
 
 	@RequestMapping(value = "service", method = RequestMethod.POST)

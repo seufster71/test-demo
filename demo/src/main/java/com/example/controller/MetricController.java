@@ -14,7 +14,7 @@ import com.example.utils.Response;
 
 @RestController
 @PreAuthorize("hasAuthority('METRIC')")
-@RequestMapping("api/metric/")
+@RequestMapping("/api/metric/")
 public class MetricController {
 
 	@RequestMapping(value = "service", method = RequestMethod.POST)

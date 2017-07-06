@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.utils.Response;
 
 @RestController
-@RequestMapping("api/public/")
+@RequestMapping("/api/public/")
 public class PublicController {
 
 	@RequestMapping(value = "service", method = RequestMethod.POST)
