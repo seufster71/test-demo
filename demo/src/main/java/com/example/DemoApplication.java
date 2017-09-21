@@ -16,7 +16,7 @@ import org.springframework.jms.support.converter.MessageType;
 
 @SpringBootApplication
 @EnableJms
-@ComponentScan(basePackages = {"com.example","org.mangobutter"})
+@ComponentScan(basePackages = {"com.example","org.mangobutter","org.testo"})
 public class DemoApplication {
 
 	@Bean

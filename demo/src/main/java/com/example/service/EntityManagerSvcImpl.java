@@ -4,8 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Component;
+import org.testo.core.service.EntityManagerSvc;
 
-import com.example.core.service.EntityManagerSvc;
 
 @Component
 public class EntityManagerSvcImpl implements EntityManagerSvc {

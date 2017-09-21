@@ -35,7 +35,7 @@ public class RepositoryConfiguration {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactoryA(@Qualifier("dataSourceA") DataSource ds) {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(ds);
-		em.setPackagesToScan(new String[] { "com.example.admin.model" });
+		em.setPackagesToScan(new String[] { "org.testo.admin.model" });
 		em.setPersistenceUnitName("PU1");
  
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();

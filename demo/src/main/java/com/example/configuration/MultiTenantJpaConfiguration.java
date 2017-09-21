@@ -83,7 +83,7 @@ public class MultiTenantJpaConfiguration {
 		
 		// No dataSource is set to resulting entityManagerFactoryBean
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-		em.setPackagesToScan(new String[] {"com.example.core.multi.model"});
+		em.setPackagesToScan(new String[] {"org.testo.core.multi.model"});
 		em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 		em.setJpaPropertyMap(hibernateProps);
 		em.setPersistenceUnitName("PU3");

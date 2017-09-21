@@ -6,8 +6,8 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.testo.core.utils.Response;
 
-import com.example.utils.Response;
 
 @RestController
 @RequestMapping("/api/public/")
